@@ -1,0 +1,53 @@
+button {
+  float: right;
+  margin-top: 15px;
+  margin-right: 15px; }
+
+table {
+  margin-top: 10px; }
+
+tbody tr {
+  height: 50px;
+}
+.modal .modal-dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0); }
+
+.row-fluid{
+  margin-left: 40%
+}
+.container-head{
+  height:40px;
+  background:#01b0b9;
+  line-height: 40px;
+  color:#fff;
+  border-bottom: darkorange 1px solid;
+}
+.container-head span:nth-child(1){
+  margin-right: 40px;
+  margin-left: 20px;
+  font-size: 16px;
+}
+.container-left {
+  width: 10%;
+  height: 500px;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #c0c0c0;
+}
+.container-left p:nth-child(1){
+ color: greenyellow;
+  font-size: 15px;
+}
+.container-left{
+  line-height: 30px;
+}
+.container-fluid{
+  float: left;
+  width:90%;
+  padding:20px;
+}
+
+/*# sourceMappingURL=style.css.map */
