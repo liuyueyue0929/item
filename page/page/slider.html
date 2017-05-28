@@ -1,0 +1,8 @@
+<div class="col-md-2 con-left">
+    <ul>
+        <li>{{first}}</li>
+        <li ng-repeat="i in second" ui-sref="{{i.route}}">{{i.name}}</li>
+    </ul>
+</div>
+<div class="col-md-10 con-right" ui-view>
+</div>

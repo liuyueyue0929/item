@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="js/bootstrap.css">
+    <link rel="stylesheet" href="./css/demo.css">
+</head>
+<body ng-controller="ft">
+<div class="user-interface container">
+    <div class="header row">
+            <span class="col-md-2 left">
+                <b>通用权限系统</b>
+            </span>
+            <span class="col-md-10 right">
+                <a ui-sref="{{item.route}}" ng-repeat="item in data">{{item.name}}</a>
+            </span>
+    </div>
+    <div class="user-content row" ui-view>
+
+    </div>
+</div>
+<script src="js/angular.js"></script>
+<script src="js/angular-ui-router.js"></script>
+<script src="js/jquery.js"></script>
+<script>
+    var app=angular.module("myapp",["ui.router"])
+</script>
+<script src="./data/data.js"></script>
+<script src="./js/app.js"></script>
+<script src="./js/service.js"></script>
+<script src="./js/router.js"></script>
+</body>
+</html>

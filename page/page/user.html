@@ -1,0 +1,100 @@
+<div class="alter" ng-show="boll">
+    <table class="table table-bordered">
+        <tr>
+            <td>角色</td>
+            <td><input type="text" class="role"></td>
+        </tr>
+        <tr>
+            <td>序号</td>
+            <td><input type="text" class="orders"></td>
+        </tr>
+        <tr>
+            <td>状态</td>
+            <td><input type="text" class="state"></td>
+        </tr>
+        <tr>
+            <td>创建时间</td>
+            <td><input type="text" class="create"></td>
+        </tr>
+        <tr>
+            <td>修改</td>
+            <td><input type="text" class="adds" disabled></td>
+        </tr>
+        <tr>
+            <td>删除</td>
+            <td><input type="text" class="removes" disabled></td>
+        </tr>
+    </table>
+    <button ng-click="sure()">确认</button><button ng-click="cancel()">取消</button>
+</div>
+<div class="borders chzhi" ng-show="popupSH">
+    <span class="que">确定要删除此信息吗？</span>
+    <button class="lbtn" ng-click="okFn()">确定</button>
+    <button ng-click="noFn()">取消</button>
+</div>
+<div class="row">
+    <div class="right-head col-md-12">
+        <span col-md-1>{{second.name}}</span>
+    </div>
+    <div class="col-md-12 row refer">
+        <p class="col-md-3">
+            <span>角色</span>
+            <select ng-model="part">
+                <option value="">全部</option>
+                <option value="管理员">管理</option>
+                <option value="用户">用户</option>
+            </select>
+        </p>
+        <p class="col-md-3">
+            <span>状态</span>
+            <select ng-model="status">
+                <option value="">全部</option>
+                <option value="启用">启用</option>
+                <option value="禁用">禁用</option>
+            </select>
+        </p>
+        <p class="col-md-6">
+            <span>登录名</span>
+            <input type="text" ng-model="register">
+            <button ng-click="inquire()" ng-class="{refers:bolls}">查询</button>
+        </p>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>角色</th>
+            <th>序号</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="item in arr">
+            <td>{{item.ID}}</td>
+            <td>{{item.role}}</td>
+            <td>{{item.orders}}</td>
+            <td>{{item.state}}</td>
+            <td>{{item.creattime}}</td>
+            <td>
+                <span ng-click="alter($index)">{{item.add}}</span>
+                <span style="cursor: pointer" ng-click="delete(item)">{{item.remove}}</span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <div class="page row col-md-12" ng-hide="hide" >
+        <p class="col-md-2">总共有<span class="len">{{shuju}}</span>数据</p>
+        <p class="fenye page-list col-md-7">
+            <span ng-click="updown('-')">上一页</span>
+            <span ng-click="changeIndexfn(1)" ng-class="{back:(current+1)==1}">1</span>
+            <span ng-show="boll1">...</span>
+            <span ng-repeat="i in page" ng-show="arrnum.indexOf(i)!=-1" ng-click="changeIndexfn(i)" ng-class="{back:(current+1)==i}">{{i}}</span>
+            <span ng-show="boll2">...</span>
+            <span ng-click="changeIndexfn(allpage)" ng-show="show" ng-class="{back:(current+1)==allpage}">{{allpage}}</span>
+            <span ng-click="updown('+')">下一页</span>
+        </p>
+        <p class="num col-md-2">第<input type="number" value="1" min="1" max="{{allpage}}" ng-model="valueDATA" ng-change="changeInput()">页</p>
+    </div>
+</div>
